@@ -14,7 +14,7 @@
   manage relational databases and perform operations on the data that they contain.
 - **Relational Database**: a collection of data that is organized in
   well-defined relationships. The most common type of database.
-- **Query**: a statement used to select or operate on data in a database.
+- **Query**: a statement used to return data from a database.
 - **Table**: a collection of related data in a database. Composed of rows and
   columns. Similar to a class in Python.
 - **Row**: a single record in a database table. Each column represents an
@@ -101,17 +101,27 @@ $ sqlite3 pets_database.db < 01_insert_cats_into_cats_table.sql
 Now, we'll learn how to `SELECT` data from a table, which will help us to
 confirm that we inserted the above data correctly.
 
+<details>
+  <summary>
+    <em>What immediately follows <code>INSERT INTO</code> in a SQL statement?</em>
+  </summary>
+
+  <h3>The table name.</h3>
+</details>
+<br/>
+
 ***
 
 ## Selecting Data
 
 Now that we've inserted some data into our `cats` table, we likely want to read
 that data. This is where the `SELECT` statement comes in. We use it to retrieve
-database data, or rows.
+database data, or rows. As `SELECT` statements return data, we can also call
+them **queries** (_singular: **query**_).
 
 ### Code Along 2: SELECT FROM
 
-A basic `SELECT` statement works like this:
+A basic `SELECT` query works like this:
 
 ```sql
 SELECT [names of columns we are going to select] FROM [table we are selecting from];
@@ -161,7 +171,7 @@ like this:
 SELECT * FROM cats;
 ```
 
-Now let's try out some more specific `SELECT` statements.
+Now let's try out some more specific `SELECT` queries.
 
 #### Selecting by Column Names
 
@@ -198,7 +208,7 @@ SELECT DISTINCT name FROM cats;
 What happens when we want to retrieve a specific table row? For example the row
 that belongs to Maru? Or to retrieve all the baby cats who are younger than two
 years old? We can use the `WHERE` keyword to select data based on specific
-conditions. Here's an example of a boilerplate `SELECT` statement using a
+conditions. Here's an example of a boilerplate `SELECT` query using a
 `WHERE` clause.
 
 ```sql
@@ -211,14 +221,14 @@ Let's retrieve _just Maru_ from our `cats` table:
 SELECT * FROM cats WHERE name = "Maru";
 ```
 
-That statement should return the following:
+That query should return the following:
 
 ```txt
 1|Maru|3|Scottish Fold
 ```
 
 We can also use comparison operators, like `<` or `>` to select specific data.
-Let's give it a shot. Use the following statement to select the young cats:
+Let's give it a shot. Use the following query to select the young cats:
 
 ```sql
 SELECT * FROM cats WHERE age < 2;
@@ -229,6 +239,15 @@ applications you'll build with a database. For example, it's easy to imagine a
 web application that has many users. When a user signs into your app, you'll
 need to access your database and select the user that matches the credentials an
 individual is using to log in.
+
+<details>
+  <summary>
+    <em>What immediately follows <code>SELECT</code> in a SQL query?</em>
+  </summary>
+
+  <h3>The columns to be retrieved.</h3>
+</details>
+<br/>
 
 ***
 
