@@ -116,12 +116,11 @@ confirm that we inserted the above data correctly.
 
 Now that we've inserted some data into our `cats` table, we likely want to read
 that data. This is where the `SELECT` statement comes in. We use it to retrieve
-database data, or rows. As `SELECT` statements return data, we can also call
-them **queries** (_singular: **query**_).
+database data, or rows.
 
 ### Code Along 2: SELECT FROM
 
-A basic `SELECT` query works like this:
+A basic `SELECT` statement works like this:
 
 ```sql
 SELECT [names of columns we are going to select] FROM [table we are selecting from];
@@ -171,7 +170,7 @@ like this:
 SELECT * FROM cats;
 ```
 
-Now let's try out some more specific `SELECT` queries.
+Now let's try out some more specific `SELECT` statements.
 
 #### Selecting by Column Names
 
@@ -208,7 +207,7 @@ SELECT DISTINCT name FROM cats;
 What happens when we want to retrieve a specific table row? For example the row
 that belongs to Maru? Or to retrieve all the baby cats who are younger than two
 years old? We can use the `WHERE` keyword to select data based on specific
-conditions. Here's an example of a boilerplate `SELECT` query using a
+conditions. Here's an example of a boilerplate `SELECT` statement using a
 `WHERE` clause.
 
 ```sql
@@ -221,14 +220,14 @@ Let's retrieve _just Maru_ from our `cats` table:
 SELECT * FROM cats WHERE name = "Maru";
 ```
 
-That query should return the following:
+That statement should return the following:
 
 ```txt
 1|Maru|3|Scottish Fold
 ```
 
 We can also use comparison operators, like `<` or `>` to select specific data.
-Let's give it a shot. Use the following query to select the young cats:
+Let's give it a shot. Use the following statement to select the young cats:
 
 ```sql
 SELECT * FROM cats WHERE age < 2;
@@ -242,7 +241,7 @@ individual is using to log in.
 
 <details>
   <summary>
-    <em>What immediately follows <code>SELECT</code> in a SQL query?</em>
+    <em>What immediately follows <code>SELECT</code> in a SQL statement?</em>
   </summary>
 
   <h3>The columns to be retrieved.</h3>
