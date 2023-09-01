@@ -7,7 +7,6 @@
 - Perform CRUD operations on relational databases using SQL.
 
 ***
-
 ## Key Vocab
 
 - **SQL (Structured Query Language)**: a programming language that is used to
